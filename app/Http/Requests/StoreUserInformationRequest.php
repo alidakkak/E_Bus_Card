@@ -24,7 +24,7 @@ class StoreUserInformationRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:user_information,email',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:5120',
             'template_id' => 'required',
             'linkedin' => 'string|nullable',

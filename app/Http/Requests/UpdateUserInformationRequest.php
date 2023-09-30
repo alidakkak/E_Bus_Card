@@ -23,7 +23,7 @@ class UpdateUserInformationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'email|unique:users,email,' . Auth::user()->id
+            'email' => 'email|unique:user_information,email,' . Auth::user()->id
         ];
     }
 }
