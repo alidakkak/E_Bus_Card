@@ -42,4 +42,13 @@ class AuthController extends Controller
         Auth::user()->currentAccessToken()->delete();
         return $this->success(null , 'you have been logout successfully and your token has been deleted');
     }
+
+    public function register(Request $request){
+        $user = User::create($request->all());
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return response()->json([
+           'user' => $user,
+           'token' => $token
+        ]);
+    }
 }
