@@ -28,7 +28,8 @@ class UserInformationResource extends JsonResource
             'location' => $this->location,
             'aboutme' => $this->aboutme,
             'relationships' => [
-                'user' => $this->user
+                'user' => $this->user,
+                'template' => $this->template
             ]
         ];
     }

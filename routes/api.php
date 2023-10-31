@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login' , [AuthController::class , 'login']);
 Route::get('/users/{user}' , [UserController::class , 'show']);
+Route::get('/usersInformation' , [UserInformationController::class , 'index']);
+Route::get('/usersInformation/{userInformation}' , [UserInformationController::class , 'show']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout' , [AuthController::class , 'logout']);
-    Route::get('/usersInformation' , [UserInformationController::class , 'index']);
     Route::post('/usersInformation' , [UserInformationController::class , 'store']);
-    Route::get('/usersInformation/{userInformation}' , [UserInformationController::class , 'show']);
     Route::post('/userInformation/update' , [UserInformationController::class , 'update']);
     Route::delete('/userInformation/{userInformation}' , [UserInformationController::class , 'destroy']);
     Route::get('/users' , [UserController::class , 'index']);
