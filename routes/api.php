@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserInformationController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +46,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/templates/{template}',[TemplateController::class,'show']);
     Route::delete('/templates/{template}',[TemplateController::class,'destroy']);
 
+    ///// Social Media
+    Route::get('/social', [SocialMediaController::class, 'index']);
+    Route::post('/social', [SocialMediaController::class, 'store']);
+    Route::patch('/social', [SocialMediaController::class, 'update']);
+    Route::delete('/social/{social}', [SocialMediaController::class, 'delete']);
+
+    ///// Views
+    Route::post('/views', [ViewController::class, 'store']);
+    Route::get('/views', [ViewController::class, 'viewc']);
 });
 
 

@@ -20,8 +20,6 @@ class User extends Authenticatable
     protected $guarded = ['id'];
 
 
-
-
     protected $hidden = [
         'password',
         'remember_token',
@@ -44,5 +42,13 @@ class User extends Authenticatable
 
     public function userLink () {
         return $this->hasOne(UserLink::class);
+    }
+
+    public function socialMedia() {
+        return $this->hasMany(SocialMedia::class);
+    }
+
+    public function view() {
+        return $this->hasMany(View::class);
     }
 }

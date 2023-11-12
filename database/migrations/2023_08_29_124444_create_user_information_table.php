@@ -22,10 +22,10 @@ return new class extends Migration
             $table->foreignId('template_id')->references('id')->on('templates')
             ->onDelete('cascade');
             // can be null
-            $table->string('facebook')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('instagram')->nullable();
+//            $table->string('facebook')->nullable();
+//            $table->string('linkedin')->nullable();
+//            $table->string('twitter')->nullable();
+//            $table->string('instagram')->nullable();
             $table->string('phone')->nullable();
             $table->longText('aboutme')->nullable();
             $table->string('location')->nullable();
